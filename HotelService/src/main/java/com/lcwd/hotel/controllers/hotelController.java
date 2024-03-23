@@ -21,7 +21,9 @@ public class hotelController {
 
 	@Autowired
 	private HotelService hotelService;
-
+	
+	
+	
 	// create
 	@PostMapping
 	public ResponseEntity<Hotel> createHotel(@RequestBody Hotel hotel) {

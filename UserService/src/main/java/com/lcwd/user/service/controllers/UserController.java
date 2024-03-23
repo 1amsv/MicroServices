@@ -1,6 +1,7 @@
 package com.lcwd.user.service.controllers;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,6 @@ import com.lcwd.user.service.services.UserService;
 
 @RestController
 @RequestMapping("/users")
-
 public class UserController {
 
 	@Autowired
