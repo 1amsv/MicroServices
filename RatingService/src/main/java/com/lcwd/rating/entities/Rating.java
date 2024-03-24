@@ -2,6 +2,9 @@ package com.lcwd.rating.entities;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +19,7 @@ import lombok.Setter;
 @Document("user_rating")
 public class Rating {
 	@Id
-	private String ratingId;
+	private String id;
 	private String userId;
 	private String hotelId;
 	private int rating;
