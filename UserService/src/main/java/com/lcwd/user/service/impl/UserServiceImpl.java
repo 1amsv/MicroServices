@@ -30,8 +30,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private HotelServices hotelServices;
 	
-	@Autowired
-	private RatingServices ratingServices;
+//	@Autowired
+//	private RatingServices ratingServices;
 
 	@Override
 	public User saveUser(User user) {

@@ -1,0 +1,20 @@
+server:
+  port: 8081
+    
+spring:
+  application:
+    name: ConfigServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/1amsv/microservice-config
+          clone-on-start: true
+          
+  
+
+  
+  
+
+
+
