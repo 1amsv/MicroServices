@@ -14,7 +14,6 @@ import com.lcwd.user.service.entities.Rating;
 import com.lcwd.user.service.entities.User;
 import com.lcwd.user.service.exceptions.ResourceNotFoundException;
 import com.lcwd.user.service.feign.external_services.HotelServices;
-import com.lcwd.user.service.feign.external_services.RatingServices;
 import com.lcwd.user.service.repositories.UserRepository;
 import com.lcwd.user.service.services.UserService;
 
