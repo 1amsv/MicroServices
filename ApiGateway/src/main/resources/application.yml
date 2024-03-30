@@ -6,6 +6,11 @@ spring:
     name: ApiGateway
   config:
     import: optional:configserver:http://localhost:8081/  
+  main:
+    allow-bean-definition-overriding: true  
+   
+ 
+   
 
   cloud:
         gateway:
@@ -24,8 +29,19 @@ spring:
               - id: HOTELSERVICE
                 uri: lb://HOTELSERVICE
                 predicates:
-                  - Path=/hotels/**                 
+                  - Path=/hotels/**   
+      
+#okta 3rd party auth configuration from okta developer            
+okta:
+  oauth2:
+    issuer: https://dev-56607313.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oag4j4nci0jVv3365d7
+    client-secret: ycIeAJ8BT2xA1vHU846Xs3RaSCK-IgNfw7QcGrCTSHS5PQTmoKujPagGDhHo9DFp
+    scopes:
+    - openid, profile, email, offline_access            
   
+
 #eureka:
 #  client:
 #    fetch-registry: true
