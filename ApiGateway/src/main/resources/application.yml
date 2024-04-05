@@ -9,7 +9,6 @@ spring:
 
   cloud:
     gateway:
-      mvc:
         routes:
           - id: USERSERVICE
             uri: lb://USERSERVICE
