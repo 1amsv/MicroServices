@@ -1,46 +1,30 @@
 server:
   port: 8080
-   
+
 spring:
   application:
     name: ApiGateway
   config:
-    import: optional:configserver:http://localhost:8081/  
-  main:
-    allow-bean-definition-overriding: true  
-   
- 
-   
+    import: optional:configserver:http://localhost:8081/
 
   cloud:
-        gateway:
-          mvc:
-            routes:
-              - id: USERSERVICE
-                uri: lb://USERSERVICE
-                predicates:
-                  - Path=/users/** 
-                  
-              - id: RATINGSERVICE
-                uri: lb://RATINGSERVICE
-                predicates:
-                  - Path=/ratings/** 
-                  
-              - id: HOTELSERVICE
-                uri: lb://HOTELSERVICE
-                predicates:
-                  - Path=/hotels/**   
-      
-#okta 3rd party auth configuration from okta developer            
-okta:
-  oauth2:
-    issuer: https://dev-56607313.okta.com/oauth2/default
-    audience: api://default
-    client-id: 0oag4j4nci0jVv3365d7
-    client-secret: ycIeAJ8BT2xA1vHU846Xs3RaSCK-IgNfw7QcGrCTSHS5PQTmoKujPagGDhHo9DFp
-    scopes:
-    - openid, profile, email, offline_access            
-  
+    gateway:
+      mvc:
+        routes:
+          - id: USERSERVICE
+            uri: lb://USERSERVICE
+            predicates:
+              - Path=/users/**
+
+          - id: RATINGSERVICE
+            uri: lb://RATINGSERVICE
+            predicates:
+              - Path=/ratings/**
+
+          - id: HOTELSERVICE
+            uri: lb://HOTELSERVICE
+            predicates:
+              - Path=/hotels/**
 
 #eureka:
 #  client:
@@ -50,8 +34,13 @@ okta:
 #      defaultZone: http://localhost:8761/eureka
 #  instance:
 #    prefer-ip-address: true
- 
-  
-  
 
-  
+#okta configuration for api gateway
+
+okta:
+  oauth2:
+    issuer: https://dev-56607313.okta.com/oauth2/default
+    audience: api://default
+    client-id: 0oag4j4nci0jVv3365d7
+    client-secret: ycIeAJ8BT2xA1vHU846Xs3RaSCK-IgNfw7QcGrCTSHS5PQTmoKujPagGDhHo9DFp
+    scopes: openid, profile, email, offline_access
