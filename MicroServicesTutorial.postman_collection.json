@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "bcc9a658-57cd-4ca8-947a-a7bdf08e6443",
+		"name": "MicroServicesTutorial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21875801"
+	},
+	"item": [
+		{
+			"name": "UserService",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Himanshu\",\r\n    \"email\": \"funsuk@gmail.com\",\r\n    \"about\": \"our pillu guy\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9093/users",
+							"host": [
+								"localhost"
+							],
+							"port": "9093",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9093/users",
+							"host": [
+								"localhost"
+							],
+							"port": "9093",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9093/users/05c3d991-1491-4809-825f-b407cee06a6d",
+							"host": [
+								"localhost"
+							],
+							"port": "9093",
+							"path": [
+								"users",
+								"05c3d991-1491-4809-825f-b407cee06a6d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HotelService",
+			"item": [
+				{
+					"name": "Create Hotels",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\" Restaurent\",\r\n    \"location\":\"Shikohabad\",\r\n    \"about\":\"Rajeev yadav's Restaurent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9091/hotels",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9091/hotels",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hotel by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/hotels/bc369f3e-6fe2-46c5-b620-b379942dd977",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"hotels",
+								"bc369f3e-6fe2-46c5-b620-b379942dd977"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RatingService",
+			"item": [
+				{
+					"name": "getRatings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9092/ratings",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Ratings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"userId\": \"05c3d991-1491-4809-825f-b407cee06a6d\",\r\n        \"hotelId\": \"bc369f3e-6fe2-46c5-b620-b379942dd977\",\r\n        \"rating\": 9,\r\n        \"feedback\": \"well its a great dining\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9092/ratings",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get rating by userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/ratings/users/2a057020-eabc-40c5-953c-1f2168cb1f9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"ratings",
+								"users",
+								"2a057020-eabc-40c5-953c-1f2168cb1f9a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get rating by hotel id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9092/ratings/hotels/96ddb09a-91cc-46ae-ae0e-31786c809976",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"ratings",
+								"hotels",
+								"96ddb09a-91cc-46ae-ae0e-31786c809976"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ApiGateway",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ratings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

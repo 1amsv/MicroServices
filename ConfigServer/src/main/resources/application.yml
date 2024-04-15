@@ -10,11 +10,3 @@ spring:
         git:
           uri: https://github.com/1amsv/microservice-config
           clone-on-start: true
-          
-  
-
-  
-  
-
-
-

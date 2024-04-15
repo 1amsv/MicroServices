@@ -38,15 +38,13 @@ public class UserController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(user1);
 
 	}
-	int retryCount =1;
+	
 	// getSingleserById
 	@GetMapping("/{userId}")
 	//@CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallback")
 	//@Retry(name="ratingHotelService", fallbackMethod = "ratingHotelFallback")
 	@RateLimiter(name="userRateLimiter", fallbackMethod = "ratingHotelFallback")
 	public ResponseEntity<User> getSingleUser(@PathVariable String userId) {
-		logger.info("Retry count = {}", retryCount);
-		retryCount++;
 		User user = userService.getUser(userId);
 		return ResponseEntity.ok(user);
 	}
